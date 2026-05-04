@@ -2,30 +2,30 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven3.9.12'
-        jdk 'java17'
+        maven 'maven3.9.15'
+        jdk 'java21'
     }
 
     environment {
         APP_NAME         = 'country-chicken-backend'
 
-        NEXUS_MAVEN_URL  = '3.89.152.50:8081'
-        NEXUS_DOCKER_URL = '3.89.152.50:8082'
+        NEXUS_MAVEN_URL  = '13.203.193.194:8081'
+        NEXUS_DOCKER_URL = '13.203.193.194:8082'
 
         MAVEN_REPO       = 'maven-releases'
         DOCKER_REPO      = 'docker-releases'
 
         GROUP_ID         = 'com.countrychicken'
-        VERSION          = ''
-        JAR_NAME         = ''
+        VERSION          = '1.0.0'
+        JAR_NAME         = 'country-chicken-backend-1.0.0.jar'
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git branch: 'test',
-                    url: 'https://github.com/srikanth78933/country-chicken-backend.git'
+                git branch: 'main',
+                    url: 'https://github.com/venkatesh12626/country-chicken-backend.git'
             }
         }
 
